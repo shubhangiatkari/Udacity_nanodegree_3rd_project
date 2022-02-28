@@ -57,6 +57,8 @@ def clean_data(df):
         
         # convert column from string to numeric
         categories[column] = pd.to_numeric(categories[column])
+        #categories[column] = categories[column].astype(int)
+    categories.replace(2, 1, inplace=True)
     
     # drop the original categories column from `df`
     df.drop('categories', axis = 1, inplace = True)
